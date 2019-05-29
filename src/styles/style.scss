@@ -1,0 +1,99 @@
+$normal: #555;
+$bg1: #ffb47f;
+$bg2: #ffdd7f;
+
+$width: 880px;
+
+textarea {
+  width: $width;
+}
+
+
+@mixin mono-text {
+  font-family: monospace;
+  font-size: 16px;
+  color: $normal;
+}
+
+
+table {
+  border-collapse: collapse;
+  text-align: center;
+  margin-bottom: 20px;
+}
+td {
+  @include mono-text;
+  padding: 1px 2px;
+  border: 1px solid $normal;
+}
+th {
+  font-weight: normal;
+  padding: 2px;
+  &.rowindex { padding-right: 15px; }
+}
+
+table#main {
+  td.gap { border: 0; }
+  td.bold {
+    font-weight: bold;
+    color: black;
+    border: 2px solid black;
+    background-color: $bg1;
+  }
+  td.bg2 { background-color: $bg2; }
+}
+
+table#functors tr {
+  &.bg2 { background-color: $bg2; }
+  td.customName {
+    border: 0;
+    background-color: white;
+    padding-left: 20px;
+    input.red { background-color: red; }
+  }
+  td.light { color: #ccc; }
+}
+
+
+p#formula span {
+  @include mono-text;
+  padding-left: 1px;
+  &.bold { font-weight: bold; color: black; }
+  &.bg1 { background-color: $bg1; }
+  &.bg2 { background-color: $bg2; }
+}
+
+
+a#reset {
+  display: block;
+  margin-bottom: 30px;
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+#intro {
+  margin-bottom: 20px;
+  li {
+    @include mono-text;
+    margin-top: 5px;
+    span {
+      width: $width - 50px;
+      display: block;
+      font-size: 70%;
+    }
+  }
+  #octocat {
+    position: absolute;
+    left: $width - 50px;
+  }
+}
+
+p#error {
+  color: red;
+}
+
+button {
+  display: block;
+}
